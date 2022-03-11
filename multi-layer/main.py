@@ -83,22 +83,24 @@ def main():
     # print(Y_train_target[0].shape)
     print("As of now mlp function has not been implemented. It will be implemented in future iterations")
 
+    hidden_units = 20
+    train_accuracy_matrix, test_accuracy_matrix= mlp(biased_X_train, Y_train_target, biased_X_test, Y_test_target, 20, 50, 0.1, 0.9)
     
-    np.random.shuffle(data_train)
+    # np.random.shuffle(data_train)
 
-    half_data_train = data_train[0:30000]
-    half_Y_train = half_data_train[:,0]
-    half_X_train = half_data_train[:,1:]
+    # half_data_train = data_train[0:30000]
+    # half_Y_train = half_data_train[:,0]
+    # half_X_train = half_data_train[:,1:]
 
-    half_X_train = normalize_array(half_X_train)
-    biased_half_X_train = add_bias(half_X_train)
+    # half_X_train = normalize_array(half_X_train)
+    # biased_half_X_train = add_bias(half_X_train)
 
-    half_Y_train_target = one_hot_encode_array(half_Y_train)
+    # half_Y_train_target = one_hot_encode_array(half_Y_train)
 
-    train_accuracy_matrix, test_accuracy_matrix= mlp(biased_half_X_train, half_Y_train_target, biased_X_test, Y_test_target, 100, 5, 0.1, 0.9)
+    # train_accuracy_matrix, test_accuracy_matrix= mlp(biased_half_X_train, half_Y_train_target, biased_X_test, Y_test_target, 100, 5, 0.1, 0.9)
 
-    print(train_accuracy_matrix)
-    print(test_accuracy_matrix)
+    # print(train_accuracy_matrix)
+    # print(test_accuracy_matrix)
     # print("Success!!")
     plot_accuracy_graph(np.array(train_accuracy_matrix).T,np.array(test_accuracy_matrix).T)
 
