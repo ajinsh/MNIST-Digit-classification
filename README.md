@@ -1,3 +1,15 @@
+# Code Revision and Review Project Idea
+We are a group of 2 people, implementing clean coding techniques to the existing
+open-source code. The code we have chosen is “MNIST-Digit-classification using
+Perceptron Learning algorithm” which is a 3 years old code built in Python.
+## Project Goals
+1. Clean code 
+2. Meaningful Naming convention
+3. Comments
+4. Code Formatting
+5. Function based structure
+6. Error Handling
+
 # MNIST-Digit-classification using Perceptron Learning algorithm
 ## Overview
 Recognised handwritten digits from MNIST Dataset by implementing perceptron learning algorithm
