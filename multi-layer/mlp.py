@@ -1,7 +1,31 @@
 from helper_functions import *
 
 def mlp_test(biased_X_test, Y_test_target, W1, W2):
-    pass
+    
+    """
+    Computes and returns the outputs for the test data set
+
+    Arguments:
+
+    biased_X_test -- one sample of the test dataset
+
+    Y_test_target -- actual output value of the above mentioned sample
+
+    W1 -- weight matrix associated between input and hidden layer
+
+    W2 -- weight matrix associated between hidden and output layer
+
+    
+    """
+    
+    Z1 = np.dot(biased_X_test, W1.T).astype('float32')
+    A1 = Sigmoid(Z1) #shape - (10,)
+    A1 = reshape_matrix(A1, (1, A1.shape[0])) #shape -(1,10)
+    hidden_layer_input = add_bias(A1) #shape - (1,11)
+    Z2 = np.dot(hidden_layer_input, W2.T).astype('float32') #shape - (1,10)
+    A2 = Sigmoid(Z2) #shape - (1,10)
+
+    return A2
 
 def mlp(biased_X_train, Y_train_target, biased_X_test, Y_test_target,hidden_units, epochs, learning_rate, momentum):
     test_accuracy_matrix = list()
